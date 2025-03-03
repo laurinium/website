@@ -7,8 +7,9 @@ const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Jens Laur - Tech Lead / DevOps Engineer",
+  creator: "Jens Laur",
   description:
-    "Professional portfolio of Jens Laur, a Senior DevOps Engineer specializing in cloud infrastructure, automation, and CI/CD pipelines.",
+    "Jens Laur, a Senior DevOps Engineer specializing in cloud infrastructure, automation, and CI/CD pipelines.",
 }
 
 export default function RootLayout({
