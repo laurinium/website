@@ -34,8 +34,8 @@ export function AboutSection() {
             </p>
           </div>
         </div>
-        <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-2 lg:gap-4">
-          <div className="flex flex-col justify-center space-y-2">
+        <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-2 lg:gap-12">
+          <div className="flex flex-col justify-center space-y-4">
             <div className="space-y-2">
               <h3 className="text-xl font-bold">
                 <span className="text-primary">function</span> <span className="text-foreground">getBackground</span>(){" "}
@@ -54,13 +54,13 @@ export function AboutSection() {
               <p className="text-foreground">{`}`}</p>
             </div>
           </div>
-          <div className="flex items-center justify-center w-full">
+          <div className="flex items-center justify-center">
             <Terminal
               
               initialCommands={initialCommands}
               className="w-full"
               welcomeMessage={[
-                "# cat ./jens.yaml",
+                "# cat jens.yaml",
                 "apiVersion: devops/v1",
                 "kind: Engineer",
                 "metadata:",
@@ -70,20 +70,20 @@ export function AboutSection() {
                 "spec:",
                 "  caffeine: critical",
                 "  skills:",
-                "    yaml: legendary",
                 "    linux: native",
-                "    cloud: CLI master",
                 "    automation: severe addiction",
                 "  experience: 12 years",
-                "  tools: [Terraform, Kubernetes, Bash, Neovim]",
+                "  tools: [Terraform, Kubernetes, zsh]",
                 "  homelab: Proxmox + K3s",
-                "  hobbies: [Keyboards, Tinkering, 3D printing]",
-                "  favoriteMovies: [Matrix, Blade Runner 2049, Star Wars]",
-                "  music: [Numetal, K-Pop, Dark Synth, Synthwave]",
+                "  hobbies:",
+                "    - name: \"Keyboard building\"",
+                "      layout: \"Lily58\"",
+                "    - name: \"Homelabbing\"",
+                "      services:",
+                "        - Home Assistant",
+                "        - Kubernetes",
                 "  os: \"Arch Linux (btw)\"",
-                "  gamingRig: \"7800X3D, RTX 4070, 64GB RAM\"",
                 "  workoutRoutine: \"Lifting servers\"",
-                "  philosophy: \"Automate everything\""
               ]}
             />
           </div>

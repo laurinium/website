@@ -239,7 +239,7 @@ export function Terminal({
         <div className="terminal-dot bg-green-500"></div>
         <span className="ml-2">cat ~/mainf.tf - jens@homelab</span>
       </div>
-      <div ref={terminalRef} className="terminal-content w-100 h-[630px] overflow-auto p-4 font-mono text-sm leading-relaxed">
+      <div ref={terminalRef} className="terminal-content h-[600px] overflow-auto p-4 font-mono text-xs leading-relaxed">
         {history.map((entry, i) => (
           <div key={i}>
             {entry.command && (
