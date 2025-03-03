@@ -38,7 +38,7 @@ export default function HeroSection() {
               </div>
               <div className="flex items-center">
                 <span className="text-primary mr-2">{">"}</span>
-                <p className="text-xl text-muted-foreground">Tech Lead DevOps Engineer</p>
+                <p className="text-xl text-muted-foreground">Tech Lead / DevOps Engineer</p>
               </div>
               <div className="flex items-start">
                 <span className="text-primary mr-2 mt-1">{">"}</span>
