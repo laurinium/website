@@ -30,7 +30,7 @@ export function Footer() {
           <div className="mt-8 border-t pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} Jens Laur. All rights reserved.</p>
           <nav className="flex gap-4 text-sm">
-            <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+            {/* <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
               Privacy Policy
             </Link>
             <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
@@ -38,7 +38,7 @@ export function Footer() {
             </Link>
             <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
               Cookie Policy
-            </Link>
+            </Link> */}
           </nav>
         </div>
         </div>

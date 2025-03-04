@@ -126,16 +126,6 @@ export function Terminal({
   const terminalRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
 
-  const scrollToBottom = () => {
-    if (terminalRef.current) {
-      terminalRef.current.scrollTop = terminalRef.current.scrollHeight
-    }
-  }
-
-  useEffect(() => {
-    scrollToBottom()
-  }, [terminalRef])
-
   useEffect(() => {
     if (welcomeMessage) {
       setHistory([{ command: "", output: welcomeMessage }])
@@ -218,11 +208,6 @@ export function Terminal({
     }
   }
 
-  const focusInput = () => {
-    if (inputRef.current) {
-      inputRef.current.focus()
-    }
-  }
 
   return (
     <div
@@ -231,13 +216,12 @@ export function Terminal({
         "border border-primary/30 rounded-md overflow-hidden shadow-lg",
         className,
       )}
-      onClick={focusInput}
     >
       <div className="terminal-header">
         <div className="terminal-dot bg-red-500"></div>
         <div className="terminal-dot bg-yellow-500"></div>
         <div className="terminal-dot bg-green-500"></div>
-        <span className="ml-2">cat ~/mainf.tf - jens@homelab</span>
+        <span className="ml-2">cat ~/jens.yaml - jens@homelab</span>
       </div>
       <div ref={terminalRef} className="terminal-content h-[600px] overflow-auto p-4 font-mono text-xs leading-relaxed">
         {history.map((entry, i) => (
@@ -265,7 +249,6 @@ export function Terminal({
             type="text"
             value={input}
             className="flex-1 bg-transparent outline-none text-foreground"
-            autoFocus
           />
         </div>
       </div>
