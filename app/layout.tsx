@@ -3,7 +3,7 @@ import type { Metadata } from "next"
 import { JetBrains_Mono } from "next/font/google"
 import "./globals.css"
 
-const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"] })
+const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'], display: 'swap'})
 
 export const metadata: Metadata = {
   title: "Jens Laur - Tech Lead / DevOps Engineer",

@@ -76,26 +76,7 @@ export function ProjectsSection() {
                     </Badge>
                   ))}
                 </div>
-              </CardContent>
-              <CardFooter className="flex justify-between">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  asChild
-                  className="border-primary/50 text-primary hover:bg-primary/10"
-                >
-                  <Link href={project.codeLink} className="flex items-center gap-1">
-                    <Github className="h-4 w-4" />
-                    <span>Code</span>
-                  </Link>
-                </Button>
-                <Button size="sm" asChild className="bg-primary text-primary-foreground hover:bg-primary/90">
-                  <Link href={project.demoLink} className="flex items-center gap-1">
-                    <ExternalLink className="h-4 w-4" />
-                    <span>Demo</span>
-                  </Link>
-                </Button>
-              </CardFooter>
+              </CardContent>              
             </Card>
           ))}
         </div>

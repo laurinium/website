@@ -6,6 +6,7 @@ import { ExperienceSection } from "@/components/experience-section"
 import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
 import { Header } from "@/components/header"
+import { BlogSection } from "@/components/blog-section"
 
 export default function Home() {
   return (

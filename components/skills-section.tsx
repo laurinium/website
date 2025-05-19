@@ -18,7 +18,6 @@ const skills = [
       "Terraform",
       "Ansible",
       "Crossplane",
-      "Pulumi"
     ]
   },
   {
@@ -26,7 +25,7 @@ const skills = [
     title: "CI/CD",
     details: [
       "GitHub Actions",
-      "GitLab CI/CD)",
+      "GitLab CI/CD",
       "ArgoCD, Flux (GitOps)"
     ]
   },
@@ -65,7 +64,6 @@ const skills = [
     icon: Database,
     title: "Databases",
     details: [
-      "PostgreSQL",
       "MySQL/MariaDB",
       "Elasticsearch",
       "Redis, DynamoDB (NoSQL)"
@@ -77,7 +75,6 @@ const skills = [
     details: [
       "HashiCorp Vault",
       "SAST/DAST (code scanning)",
-      "Compliance Automation"
     ]
   },
   {

@@ -1,0 +1,59 @@
+---
+title: "Building a Comprehensive Kubernetes Monitoring Stack"
+date: "2023-09-25"
+category: "DevOps"
+readTime: "15 min read"
+description: "A detailed guide to setting up Prometheus, Grafana, and Loki for full-stack monitoring and observability in Kubernetes environments."
+---
+
+# Building a Comprehensive Kubernetes Monitoring Stack
+
+Monitoring is a critical aspect of running applications in Kubernetes. Without proper observability, troubleshooting issues becomes a guessing game, and proactive problem prevention is nearly impossible. In this guide, we'll build a comprehensive monitoring stack using three powerful open-source tools:
+
+- **Prometheus** - for metrics collection and storage
+- **Grafana** - for visualization and dashboards
+- **Loki** - for log aggregation and querying
+
+## Understanding the Monitoring Stack
+
+Before we dive into implementation, let's understand the architecture of our monitoring stack:
+
+<Diagram title="Kubernetes Monitoring Architecture" type="flowchart">
+flowchart TD
+    A["Kubernetes Pods"] -->|Expose metrics| B["Prometheus"]
+    C["node-exporter"] -->|Node metrics| B
+    D["kube-state-metrics"] -->|K8s state| B
+    E["Kubernetes Nodes"] -->|Logs| F["Promtail"]
+    F -->|Forward logs| G["Loki"]
+    B -->|Metrics| H["Grafana"]
+    G -->|Logs| H
+    B -->|Alerts| I["Alertmanager"]
+    I -->|Notifications| J["Email/Slack/PagerDuty"]
+    H -->|Visualize| K["Dashboards"]
+    H -->|Query| L["Explore"]
+</Diagram>
+
+## Prerequisites
+
+- A running Kubernetes cluster (local or cloud-based)
+- kubectl configured to connect to your cluster
+- Helm 3 installed
+- Basic understanding of Kubernetes concepts
+- Sufficient resources in your cluster (at least 4GB RAM available)
+
+## Setting Up Prometheus
+
+We'll use the Prometheus Operator from the kube-prometheus-stack Helm chart, which includes Prometheus, Alertmanager, and necessary exporters.
+
+```bash
+# Add the Prometheus community Helm repository
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+helm repo update
+
+# Install kube-prometheus-stack
+helm install prometheus prometheus-community/kube-prometheus-stack \
+  --namespace monitoring \
+  --set prometheus.prometheusSpec.retention=15d \
+  --set prometheus.prometheusSpec.resources.requests.cpu=1 \
+  --set prometheus.prometheusSpec.resources.requests.memory=4Gi
+
